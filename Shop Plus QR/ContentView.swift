@@ -11,6 +11,10 @@ import WatchConnectivity
 import EFQRCode
 
 struct ContentView: View {
+    
+    @ObservedObject var userData: UserDataModel = UserDataModel.Instance;
+      
+    @State var id: String = ""
     var body: some View {
         Text("Hello, World!")
     }
