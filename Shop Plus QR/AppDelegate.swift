@@ -66,10 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             
             if (m["requestForActualUserId"] != nil) {
                 guard WCSession.default.isReachable else { return }
-                print("Recivied message from watch with userId \(m["requestForActualUserId"]!). Sending current userId")
+                print("Recivied message from watch with id \(m["requestForActualUserId"]!). Sending current id")
 
                 WCSession.default.sendMessage(
-                    ["userId": String(self.userData.id)],
+                    ["id": String(self.userData.id)],
                     replyHandler: { reply in print(reply) },
                     errorHandler: { e in print("Error sending the message: \(e.localizedDescription)") })
             }
