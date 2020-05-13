@@ -24,6 +24,7 @@
 		F04EA7AB246C76580090E055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04EA7AA246C76580090E055 /* Preview Assets.xcassets */; };
 		F04EA7BB246C777F0090E055 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7BA246C777F0090E055 /* UserDataModel.swift */; };
 		F04EA7BE246C7EDC0090E055 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = F04EA7BD246C7EDC0090E055 /* EFQRCode */; };
+		F04EA7C0246C83A10090E055 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7BF246C83A10090E055 /* UserDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		F04EA7AA246C76580090E055 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F04EA7AC246C76580090E055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F04EA7BA246C777F0090E055 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		F04EA7BF246C83A10090E055 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				F04EA7A1246C76530090E055 /* ContentView.swift */,
 				F04EA7A3246C76530090E055 /* HostingController.swift */,
 				F04EA7A5246C76530090E055 /* ExtensionDelegate.swift */,
+				F04EA7BF246C83A10090E055 /* UserDataModel.swift */,
 				F04EA7A7246C76580090E055 /* Assets.xcassets */,
 				F04EA7AC246C76580090E055 /* Info.plist */,
 				F04EA7A9246C76580090E055 /* Preview Content */,
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04EA7C0246C83A10090E055 /* UserDataModel.swift in Sources */,
 				F04EA7A4246C76530090E055 /* HostingController.swift in Sources */,
 				F04EA7A2246C76530090E055 /* ContentView.swift in Sources */,
 				F04EA7A6246C76530090E055 /* ExtensionDelegate.swift in Sources */,
