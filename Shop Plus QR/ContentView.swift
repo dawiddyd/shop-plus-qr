@@ -35,7 +35,35 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Text("Hello, World!")
+       VStack {
+            if userData.id.count == 0 {
+                Text("Enter your ID")
+                    
+                TextField("Your Plus ID", text: $id)
+                    .padding()
+                    .multilineTextAlignment(TextAlignment.center)
+                    .keyboardType(.numberPad)
+
+                Button(action: {
+                    
+                self.userData.id = self.id
+                self.sendMessage()
+                    
+                }, label: {
+                    Text("Generate QR Code")
+                }).padding()
+                    .disabled(self.id.isEmpty || self.id.count < 17 || self.id.count > 17)
+            } else {
+                Text("Your Plus ID is \(userData.id)")
+                Image(decorative: generateQrCode(id: self.userData.id), scale: 2.0)
+                    
+                Button(action: {
+                    self.userData.id = ""
+                }, label: {
+                    Text("Change your ID")
+                }).padding()
+            }
+        }.padding()
     }
 }
 
