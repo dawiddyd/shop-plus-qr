@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class UserDataModel: ObservableObject {
+    
+    @Published var id: String = UserDefaults.standard.string(forKey: "id") ?? "" {
+        didSet {
+            UserDefaults.standard.setValue(self.id, forKey: "id")
+        }
+    }
+    
+    public static var Instance = UserDataModel();
+}
