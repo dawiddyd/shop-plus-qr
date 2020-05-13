@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import WatchConnectivity
+import SwiftUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+    
+    @ObservedObject var userData: UserDataModel = UserDataModel.Instance
+    
+    override init() {
+        super.init()
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,7 +42,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("activationDidCompleteWith")
+    }
+      
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("sessionDidBecomeInactive")
+    }
+      
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("sessionDidDeactivate")
+    }
+      
+    func sessionWatchStateDidChange(_ session: WCSession) {
+        print("sessionWatchStateDidChange")
+    }
+    
+    public func session(_: WCSession, didReceiveMessage message: [String: Any], replyHandler: @escaping ([String: Any]) -> Void) {
+        DispatchQueue.main.async {
+            
+            guard let m = message as? [String: String] else { return }
+            
+            if (m["requestForActualUserId"] != nil) {
+                guard WCSession.default.isReachable else { return }
+                print("Recivied message from watch with userId \(m["requestForActualUserId"]!). Sending current userId")
 
-
+                WCSession.default.sendMessage(
+                    ["userId": String(self.userData.id)],
+                    replyHandler: { reply in print(reply) },
+                    errorHandler: { e in print("Error sending the message: \(e.localizedDescription)") })
+            }
+        }
+    }
 }
 

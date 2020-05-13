@@ -22,6 +22,7 @@
 		F04EA7A6246C76530090E055 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7A5246C76530090E055 /* ExtensionDelegate.swift */; };
 		F04EA7A8246C76580090E055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04EA7A7246C76580090E055 /* Assets.xcassets */; };
 		F04EA7AB246C76580090E055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04EA7AA246C76580090E055 /* Preview Assets.xcassets */; };
+		F04EA7BB246C777F0090E055 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7BA246C777F0090E055 /* UserDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		F04EA7A7246C76580090E055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F04EA7AA246C76580090E055 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F04EA7AC246C76580090E055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F04EA7BA246C777F0090E055 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				F04EA77C246C764A0090E055 /* AppDelegate.swift */,
 				F04EA77E246C764A0090E055 /* SceneDelegate.swift */,
 				F04EA780246C764A0090E055 /* ContentView.swift */,
+				F04EA7BA246C777F0090E055 /* UserDataModel.swift */,
 				F04EA782246C76500090E055 /* Assets.xcassets */,
 				F04EA787246C76500090E055 /* LaunchScreen.storyboard */,
 				F04EA78A246C76500090E055 /* Info.plist */,
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04EA7BB246C777F0090E055 /* UserDataModel.swift in Sources */,
 				F04EA77D246C764A0090E055 /* AppDelegate.swift in Sources */,
 				F04EA77F246C764A0090E055 /* SceneDelegate.swift in Sources */,
 				F04EA781246C764A0090E055 /* ContentView.swift in Sources */,
