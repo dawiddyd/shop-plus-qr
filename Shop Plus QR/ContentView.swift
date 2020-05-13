@@ -15,6 +15,25 @@ struct ContentView: View {
     @ObservedObject var userData: UserDataModel = UserDataModel.Instance;
       
     @State var id: String = ""
+    
+    func generateQrCode(id: String) -> CGImage {
+        return EFQRCode.generate(content: id)!
+    }
+    
+    func sendMessage() {
+        guard WCSession.default.isReachable else { return }
+
+        WCSession.default.sendMessage(
+            ["id": String(self.userData.id)],
+            replyHandler: { reply in print(reply) },
+            errorHandler: { e in
+//                print("Error sending the message: \(e.localizedDescription)")
+                Alert(title: Text("Error sending the message"),
+                      message: Text(e.localizedDescription),
+                      dismissButton: .default(Text("Close")))
+        })
+    }
+    
     var body: some View {
         Text("Hello, World!")
     }
