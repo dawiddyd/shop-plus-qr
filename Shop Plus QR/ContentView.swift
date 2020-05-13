@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import WatchConnectivity
+import EFQRCode
 
 struct ContentView: View {
     var body: some View {
