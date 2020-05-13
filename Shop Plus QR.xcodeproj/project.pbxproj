@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		F04EA7A8246C76580090E055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04EA7A7246C76580090E055 /* Assets.xcassets */; };
 		F04EA7AB246C76580090E055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04EA7AA246C76580090E055 /* Preview Assets.xcassets */; };
 		F04EA7BB246C777F0090E055 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7BA246C777F0090E055 /* UserDataModel.swift */; };
+		F04EA7BE246C7EDC0090E055 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = F04EA7BD246C7EDC0090E055 /* EFQRCode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04EA7BE246C7EDC0090E055 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +202,9 @@
 				F04EA790246C76510090E055 /* PBXTargetDependency */,
 			);
 			name = "Shop Plus QR";
+			packageProductDependencies = (
+				F04EA7BD246C7EDC0090E055 /* EFQRCode */,
+			);
 			productName = "Shop Plus QR";
 			productReference = F04EA779246C764A0090E055 /* Shop Plus QR.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +273,9 @@
 				Base,
 			);
 			mainGroup = F04EA770246C764A0090E055;
+			packageReferences = (
+				F04EA7BC246C7EDC0090E055 /* XCRemoteSwiftPackageReference "EFQRCode" */,
+			);
 			productRefGroup = F04EA77A246C764A0090E055 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -647,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F04EA7BC246C7EDC0090E055 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFQRCode.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F04EA7BD246C7EDC0090E055 /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F04EA7BC246C7EDC0090E055 /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F04EA771246C764A0090E055 /* Project object */;
 }
