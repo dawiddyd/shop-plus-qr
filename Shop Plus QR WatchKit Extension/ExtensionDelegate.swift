@@ -7,6 +7,8 @@
 //
 
 import WatchKit
+import WatchConnectivity
+import SwiftUI
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
