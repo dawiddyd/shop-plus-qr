@@ -74,3 +74,29 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
 }
+
+extension ExtensionDelegate: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Active session")
+    }
+    
+    public func session(_: WCSession,
+                            didReceiveMessage message: [String: Any],
+                            replyHandler: @escaping ([String: Any]) -> Void) {
+        
+         DispatchQueue.main.async {
+    
+            guard let m = message as? [String: String] else { return }
+        
+            replyHandler([
+                "response": "properly formed message!",
+                "originalMessage": m,
+            ])
+       
+            if m["id"] != self.userData.id {
+                print("changing id to \(m["id"]!) in user defaults")
+                self.userData.id = m["id"]!
+            }
+        }
+    }
+}
