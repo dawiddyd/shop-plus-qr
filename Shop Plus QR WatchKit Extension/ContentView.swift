@@ -7,10 +7,25 @@
 //
 
 import SwiftUI
+import EFQRCode
 
 struct ContentView: View {
+    
+    @ObservedObject var userData: UserDataModel = UserDataModel.Instance;
+       
+    func generateQrCode(id: String) -> CGImage {
+        return EFQRCode.generate(content: id)!
+    }
+    
     var body: some View {
-        Text("Hello, World!")
+         VStack {
+            if userData.id.count > 0 {
+                Text("Your ID: \(self.userData.id)")
+                Image(decorative: generateQrCode(id: self.userData.id), scale: 4.2)
+            } else {
+                Text("Open the application to generate a QR code")
+            }
+        }
     }
 }
 
