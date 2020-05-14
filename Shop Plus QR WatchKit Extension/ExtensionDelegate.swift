@@ -24,7 +24,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
     func applicationDidBecomeActive() {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+       DispatchQueue.main.async {
+            guard WCSession.default.isReachable else { return }
+            WCSession.default.sendMessage(
+                ["requestForActualUserId": String(self.userData.id)],
+                replyHandler: { reply in print(reply["id"]!) },
+                errorHandler: { e in print("Error sending the message: \(e.localizedDescription)")
+            })
+        }
+    }
+    
+    func updateUserId(id: String) {
+           self.userData.id = id
     }
 
     func applicationWillResignActive() {
