@@ -25,6 +25,7 @@
 		F04EA7BB246C777F0090E055 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7BA246C777F0090E055 /* UserDataModel.swift */; };
 		F04EA7BE246C7EDC0090E055 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = F04EA7BD246C7EDC0090E055 /* EFQRCode */; };
 		F04EA7C0246C83A10090E055 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA7BF246C83A10090E055 /* UserDataModel.swift */; };
+		F04EA7C3246C889E0090E055 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = F04EA7C2246C889E0090E055 /* EFQRCode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04EA7C3246C889E0090E055 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +121,7 @@
 				F04EA791246C76510090E055 /* Shop Plus QR WatchKit App */,
 				F04EA7A0246C76530090E055 /* Shop Plus QR WatchKit Extension */,
 				F04EA77A246C764A0090E055 /* Products */,
+				F04EA7C1246C889E0090E055 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +190,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F04EA7C1246C889E0090E055 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +252,9 @@
 			dependencies = (
 			);
 			name = "Shop Plus QR WatchKit Extension";
+			packageProductDependencies = (
+				F04EA7C2246C889E0090E055 /* EFQRCode */,
+			);
 			productName = "Shop Plus QR WatchKit Extension";
 			productReference = F04EA79C246C76530090E055 /* Shop Plus QR WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -673,6 +686,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		F04EA7BD246C7EDC0090E055 /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F04EA7BC246C7EDC0090E055 /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
+		};
+		F04EA7C2246C889E0090E055 /* EFQRCode */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F04EA7BC246C7EDC0090E055 /* XCRemoteSwiftPackageReference "EFQRCode" */;
 			productName = EFQRCode;
