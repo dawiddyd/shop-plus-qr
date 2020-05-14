@@ -11,6 +11,8 @@ import WatchConnectivity
 import SwiftUI
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    
+    @ObservedObject var userData: UserDataModel = UserDataModel.Instance;
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
