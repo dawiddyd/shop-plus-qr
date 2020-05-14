@@ -15,7 +15,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     @ObservedObject var userData: UserDataModel = UserDataModel.Instance;
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        WKExtension.shared().isAutorotating = true
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
     }
 
     func applicationDidBecomeActive() {
